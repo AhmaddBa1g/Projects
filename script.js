@@ -33,6 +33,6 @@ function drawForeground() {
 function drawText() {
     ctx.font = '24px Arial';
     ctx.fillStyle = 'white';
-    ctx.fillText('Your Name', 50, 50);
-    ctx.fillText('Scene Title', 50, 80);
+    ctx.fillText('Ahmad Baig', 50, 50);
+    ctx.fillText('Forest, City, Castle', 50, 80);
 }
