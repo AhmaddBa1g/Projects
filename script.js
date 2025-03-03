@@ -12,10 +12,10 @@ background.onload = function () {
 
 // Load and draw foreground images
 const foreground1 = new Image();
-foreground1.src = 'images/city.png'; // Ensure this path is correct
+foreground1.src = 'images/city.jpg'; // Ensure this path is correct
 
 const foreground2 = new Image();
-foreground2.src = 'images/castle.png'; // Ensure this path is correct
+foreground2.src = 'images/castle.jpg'; // Ensure this path is correct
 
 function drawForeground() {
     foreground1.onload = function () {
