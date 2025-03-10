@@ -1,35 +1,31 @@
-// Get the canvas and context
 const canvas = document.getElementById('myCanvas');
 const ctx = canvas.getContext('2d');
 
-// Load and draw background image
 const background = new Image();
-background.src = 'images/forest.jpg';  // Ensure this path is correct
+background.src = 'images/forest.jpg';
 background.onload = function () {
     ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
-    drawForeground(); // Draw foreground images after the background
+    drawForeground(); 
 };
 
-// Load and draw foreground images
 const foreground1 = new Image();
-foreground1.src = 'images/city.jpg'; // Ensure this path is correct
+foreground1.src = 'images/city.jpg';
 
 const foreground2 = new Image();
-foreground2.src = 'images/castle.jpg'; // Ensure this path is correct
+foreground2.src = 'images/castle.jpg';
 
 function drawForeground() {
     foreground1.onload = function () {
-        ctx.drawImage(foreground1, 100, 300, 200, 150); // Adjust position and size
+        ctx.drawImage(foreground1, 100, 300, 200, 150);
     };
 
     foreground2.onload = function () {
-        ctx.drawImage(foreground2, 500, 250, 200, 150); // Adjust position and size
+        ctx.drawImage(foreground2, 500, 250, 200, 150);
     };
 
-    drawText(); // Draw text after images
+    drawText();
 }
 
-// Draw text on the canvas
 function drawText() {
     ctx.font = '24px Arial';
     ctx.fillStyle = 'white';
