@@ -1,38 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BMI Calculator</title>
-    <link rel="stylesheet" href="bmi.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BMI Calculator</title>
+  <link rel="stylesheet" href="bmi.css" />
 </head>
 <body>
-    <div class="container">
-        <h1>BMI Calculator</h1>
-        <form id="bmiForm">
-            <label for="weight">Enter Weight:</label>
-            <input type="number" id="weight" placeholder="Weight" required>
+  <div class="container">
+    <div class="card">
+      <h2>BMI Calculator</h2>
 
-            <label for="height">Enter Height:</label>
-            <input type="number" id="height" placeholder="Height" required>
+      <div class="radio-group">
+        <label><input type="radio" name="unit" value="metric" checked /> Metric (kg/cm)</label>
+        <label><input type="radio" name="unit" value="imperial" /> Imperial (lbs/ft)</label>
+      </div>
 
-            <div class="unit-selection">
-                <label>
-                    <input type="radio" name="unit" value="metric" checked> Metric (kg, m)
-                </label>
-                <label>
-                    <input type="radio" name="unit" value="imperial"> Imperial (lbs, inches)
-                </label>
-            </div>
+      <div class="input-group" id="height-group">
+        <label for="height">Height:</label>
+        <input type="number" id="height" placeholder="Height in cm" />
 
-            <button type="button" onclick="calculateBMI()">Calculate BMI</button>
-        </form>
+        <div id="imperial-height" class="imperial-height-row">
+          <input type="number" id="heightFeet" placeholder="Feet" />
+          <input type="number" id="heightInches" placeholder="Inches" />
+        </div>
+      </div>
 
-        <h2 id="result"></h2>
+      <div class="input-group">
+        <label for="weight">Weight:</label>
+        <input type="number" id="weight" placeholder="Weight in kg or lbs" />
+      </div>
 
-        <img src="images/background.jpg" alt="BMI Background" class="bmi-image">
+      <button onclick="calculateBMI()">Calculate BMI</button>
+      <div id="result"></div>
+      <img id="bmi-chart" src="images/BMI-Chart-for-Men.jpg" alt="BMI Chart" />
     </div>
-
-    <script src="bmi.js"></script>
+  </div>
+  <script src="bmi.js"></script>
 </body>
 </html>
