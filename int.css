@@ -1,0 +1,28 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  background-color: #111;
+  color: white;
+  padding: 20px;
+}
+
+.controls {
+  background: #222;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.6);
+  margin-bottom: 20px;
+  max-width: 600px;
+  width: 100%;
+}
+
+.form-section {
+  margin-bottom: 15px;
+}
+
+canvas {
+  border: 2px solid white;
+  background-color: #333;
+}
