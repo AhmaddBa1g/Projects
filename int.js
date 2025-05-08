@@ -23,11 +23,11 @@ items[2].src = "images/Bat-Signal-PNG-Picture.png";
 const backgrounds = {
   "gotham1.jpg": new Image(),
   "gotham2.jpg": new Image(),
-  "wayne_tower.jpg": new Image()
+  "wayne-tower.jpg": new Image()
 };
 backgrounds["gotham1.jpg"].src = "images/gotham1.png";
 backgrounds["gotham2.jpg"].src = "images/gotham2.jpg";
-backgrounds["wayne_tower.jpg"].src = "images/tower.png";
+backgrounds["wayne-tower.jpg"].src = "images/tower.png";
 
 const sounds = [
   new Audio("sounds/Batman Transition Sound-Effect.mp3"),
