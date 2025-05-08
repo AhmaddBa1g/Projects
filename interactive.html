@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Batman Interactive Scene</title>
+  <link rel="stylesheet" href="int.css" />
+</head>
+<body>
+  <div class="controls">
+    <h2>Batman Scene Controls</h2>
+
+    <div class="form-section">
+      <p>Select Gotham Background:</p>
+      <label><input type="radio" name="bg" value="gotham1.jpg" checked /> Gotham Night</label>
+      <label><input type="radio" name="bg" value="gotham2.jpg" /> Bat-Signal Sky</label>
+      <label><input type="radio" name="bg" value="wayne_tower.jpg" /> Wayne Tower</label>
+    </div>
+
+    <div class="form-section">
+      <p>Batman Y Position:</p>
+      <input type="range" id="sliderY" min="100" max="300" value="200" />
+    </div>
+
+    <div class="form-section">
+      <p>Batman X Position:</p>
+      <input type="range" id="sliderX" min="100" max="500" value="250" />
+    </div>
+
+    <div class="form-section">
+      <p>Show Gadgets:</p>
+      <label><input type="checkbox" id="item1" /> Batarang</label>
+      <label><input type="checkbox" id="item2" /> Batmobile</label>
+      <label><input type="checkbox" id="item3" /> Bat-Signal</label>
+    </div>
+
+    <div class="form-section">
+      <p>Sound Effects:</p>
+      <button onclick="playSound(0)">Bat Swoosh</button>
+      <button onclick="playSound(1)">Grapple Hook</button>
+      <button onclick="playSound(2)">Batmobile Rev</button>
+    </div>
+  </div>
+
+  <canvas id="sceneCanvas" width="600" height="400"></canvas>
+
+  <script src="int.js"></script>
+</body>
+</html>
