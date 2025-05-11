@@ -1,0 +1,131 @@
+body {
+  margin: 0;
+  background: black;
+  overflow: hidden;
+  font-family: sans-serif;
+  color: white;
+}
+
+#universe {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.stars-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: twinkle 2s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+
+.sun {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle, #ffff00, #ffaa00);
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 30px 15px yellow;
+  z-index: 2;
+}
+
+.orbit {
+  position: absolute;
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scaleY(0.6);
+  z-index: 1;
+}
+
+.orbit.pluto-orbit {
+  width: 700px;
+  height: 700px;
+  transform: translate(-50%, -50%) scaleY(0.5) rotate(20deg);
+}
+
+.planet {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 3;
+  background-size: cover;
+  background-position: center;
+  box-shadow: inset -2px -2px 4px rgba(0,0,0,0.5);
+  filter: brightness(1.15) contrast(1.1);
+  transition: transform 0.2s, filter 0.2s;
+}
+
+.planet:hover {
+  transform: scale(1.3);
+  filter: brightness(1.3) contrast(1.3);
+  z-index: 5;
+}
+
+.label {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10px;
+  white-space: nowrap;
+  color: #fff;
+  text-shadow: 1px 1px 3px black;
+}
+
+.moon {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: #ccc;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  animation: orbitmoon 3s linear infinite;
+}
+@keyframes orbitmoon {
+  from { transform: rotate(0deg) translateX(20px); }
+  to   { transform: rotate(360deg) translateX(20px); }
+}
+
+/* Planet textures */
+.mercury { width: 14px; height: 14px; background-image: url('https://upload.wikimedia.org/wikipedia/commons/3/36/Mercury_in_true_color.jpg'); }
+.venus   { width: 18px; height: 18px; background-image: url('https://upload.wikimedia.org/wikipedia/commons/e/e5/Venus-real_color.jpg'); }
+.earth   { width: 20px; height: 20px; background-image: url('https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg'); }
+.mars    { width: 16px; height: 16px; background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/02/OSIRIS_Mars_true_color.jpg'); }
+.jupiter { width: 30px; height: 30px; background-image: url('https://upload.wikimedia.org/wikipedia/commons/e/e2/Jupiter.jpg'); }
+.saturn  { width: 28px; height: 28px; background-image: url('https://upload.wikimedia.org/wikipedia/commons/c/c7/Saturn_during_Equinox.jpg'); }
+.uranus  { width: 22px; height: 22px; background-image: url('https://upload.wikimedia.org/wikipedia/commons/3/3d/Uranus2.jpg'); }
+.neptune { width: 22px; height: 22px; background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/56/Neptune_Full.jpg'); }
+.pluto   { width: 10px; height: 10px; background-image: url('https://upload.wikimedia.org/wikipedia/commons/2/2a/Nh-pluto-in-true-color_2x_JPEG-edit-frame.jpg'); }
+
+.info-box {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: rgba(0,0,0,0.7);
+  padding: 10px;
+  border: 1px solid white;
+  max-width: 300px;
+  display: none;
+  z-index: 10;
+}
