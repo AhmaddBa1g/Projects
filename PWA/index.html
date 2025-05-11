@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OrbitScope</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#000000">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="appWrapper">
+
+    <button onclick="toggleLearning()" style="margin: 10px; padding: 10px;">
+      Launch Learning View
+    </button>
+
+    <div id="learningSection" style="display: none;">
+      <canvas id="learnCanvas" width="800" height="500"></canvas>
+
+
+      <div id="canvasMenu">
+        <!--<button onclick="loadPlanetData('mercury')">Mercury</button> -->
+        <button onclick="loadPlanetData('venus')">Venus</button>
+        <button onclick="loadPlanetData('earth')">Earth</button>
+        <button onclick="loadPlanetData('mars')">Mars</button>
+        <button onclick="loadPlanetData('jupiter')">Jupiter</button>
+        <button onclick="loadPlanetData('saturn')">Saturn</button>
+        <button onclick="loadPlanetData('uranus')">Uranus</button>
+        <button onclick="loadPlanetData('neptune')">Neptune</button>
+        <button onclick="loadPlanetData('pluto')">Pluto</button>
+        <button onclick="scrollToSection('universe')">Go to Solar System ↓</button>
+      </div>
+      <div id="learningText" style="max-width: 800px; margin: 10px auto; font-size: 18px; text-align: center;"></div>
+    </div>
+
+    <div id="universe">
+      <div class="stars-container" id="stars-container"></div>
+      <div class="sun"></div>
+
+      <div class="orbit" style="width: 120px; height: 120px;"></div>
+      <div class="orbit" style="width: 180px; height: 180px;"></div>
+      <div class="orbit" style="width: 240px; height: 240px;"></div>
+      <div class="orbit" style="width: 300px; height: 300px;"></div>
+      <div class="orbit" style="width: 380px; height: 380px;"></div>
+      <div class="orbit" style="width: 460px; height: 460px;"></div>
+      <div class="orbit" style="width: 540px; height: 540px;"></div>
+      <div class="orbit" style="width: 620px; height: 620px;"></div>
+      <div class="orbit pluto-orbit"></div>
+
+      <div class="planet mercury" id="mercury"><span class="label">Mercury</span></div>
+      <div class="planet venus" id="venus"><span class="label">Venus</span></div>
+      <div class="planet earth" id="earth"><span class="label">Earth</span></div>
+      <div class="planet mars" id="mars"><span class="label">Mars</span></div>
+      <div class="planet jupiter" id="jupiter"><span class="label">Jupiter</span></div>
+      <div class="planet saturn" id="saturn"><span class="label">Saturn</span></div>
+      <div class="planet uranus" id="uranus"><span class="label">Uranus</span></div>
+      <div class="planet neptune" id="neptune"><span class="label">Neptune</span></div>
+      <div class="planet pluto" id="pluto"><span class="label">Pluto</span></div>
+
+      <div class="info-box" id="infoBox"></div>
+
+      <button id="installBtn" style="display: none; position: fixed; top: 10px; right: 10px; z-index: 999; background: #111; color: white; border: 1px solid white; padding: 8px 12px; cursor: pointer;">
+        Install OrbitScope
+      </button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js').then(() => {
+          console.log("Service Worker registered!");
+        });
+      });
+    }
+  </script>
+<div id="navMenu" style="position:fixed;top:10px;left:10px;z-index:999;">
+  <a href="promo.html" target="_blank" style="color:white;margin-right:10px;">📸 Promo</a>
+  <a href="README.html" target="_blank" style="color:white;margin-right:10px;">📖 How to Use</a>
+  <a href="dev-guide.txt" target="_blank" style="color:white;">🛠 Dev Guide</a>
+</div>
+</body>
+</html>

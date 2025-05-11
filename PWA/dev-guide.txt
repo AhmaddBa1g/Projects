@@ -1,0 +1,32 @@
+OrbitScope - Developer Guide
+============================
+
+To add a new planet or topic to OrbitScope:
+
+1. Open the file: planets.json
+
+2. Add a new object with this format:
+   {
+     "id": "ceres",
+     "title": "Ceres",
+     "text": "Ceres is the largest object in the asteroid belt between Mars and Jupiter.",
+     "distance_from_sun_au": 2.77,
+     "diameter_km": 940,
+     "moons": 0,
+     "gravity": "0.27 m/s²",
+     "day_length": "9 hours",
+     "year_length": "4.6 Earth years",
+     "image": "images/ceres.jpg",
+     "audio": "sounds/ceres.mp3"
+   }
+
+3. Add a button in index.html like this:
+   <button onclick="loadPlanetData('ceres')">Ceres</button>
+
+4. Place the image and sound files in the appropriate folders.
+
+5. You’re done! Reload the app and the new data will show dynamically.
+
+Notes:
+- Use consistent naming (lowercase `id`)
+- Keep audio files short and in .mp3 format
